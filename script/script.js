@@ -39,17 +39,17 @@ button.addEventListener('click', function () {
             if (userAge < 18) {
                 let priceDiscounted = (userPrice - ((userPrice * 15) / 100)).toFixed(2);
                 document.getElementById('sale').innerHTML = 'Ridotto under18';
-                document.getElementById('cost').innerHTML = priceDiscounted;
+                document.getElementById('cost').innerHTML = priceDiscounted + '€';
             }
             else if (userAge >= 65) {
                 let priceDiscounted = (userPrice - ((userPrice * 35) / 100)).toFixed(2);
                 document.getElementById('sale').innerHTML = 'Ridotto Over 65';
-                document.getElementById('cost').innerHTML = priceDiscounted;
+                document.getElementById('cost').innerHTML = priceDiscounted + '€';
             }
             // prezzo senza agevolazioni
             else {
                 document.getElementById('sale').innerHTML = 'Nessuna agevolazione';
-                document.getElementById('cost').innerHTML = userPrice;
+                document.getElementById('cost').innerHTML = userPrice + '€';
             }
         }
 })
