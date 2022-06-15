@@ -29,35 +29,26 @@ button.addEventListener('click', function () {
             // calcolo prezzo del biglietto
             const userPrice = (userKm * 0.26).toFixed(2);
             document.getElementById('ticket').classList.remove(('d-none'));
+            document.getElementById('user-name').innerHTML = userName;
+            document.getElementById('wagon').innerHTML = wagonRand;
+            document.getElementById('cp').innerHTML = cpRand;
+            document.getElementById('cont-remove').classList.remove(('d-none'));
+            document.getElementById('ticket').classList.remove(('d-none'));
+
             // applico eventuali sconti
             if (userAge < 18) {
                 let priceDiscounted = (userPrice - ((userPrice * 15) / 100)).toFixed(2);
-                document.getElementById('cont-remove').classList.remove(('d-none'));
-                document.getElementById('ticket').classList.remove(('d-none'));
-                document.getElementById('user-name').innerHTML = userName;
                 document.getElementById('sale').innerHTML = 'Ridotto under18';
-                document.getElementById('wagon').innerHTML = wagonRand;
-                document.getElementById('cp').innerHTML = cpRand;
                 document.getElementById('cost').innerHTML = priceDiscounted;
             }
             else if (userAge >= 65) {
                 let priceDiscounted = (userPrice - ((userPrice * 35) / 100)).toFixed(2);
-                document.getElementById('cont-remove').classList.remove(('d-none'));
-                document.getElementById('ticket').classList.remove(('d-none'));
-                document.getElementById('user-name').innerHTML = userName;
                 document.getElementById('sale').innerHTML = 'Ridotto Over 65';
-                document.getElementById('wagon').innerHTML = wagonRand;
-                document.getElementById('cp').innerHTML = cpRand;
                 document.getElementById('cost').innerHTML = priceDiscounted;
             }
             // prezzo senza agevolazioni
             else {
-                document.getElementById('cont-remove').classList.remove(('d-none'));
-                document.getElementById('ticket').classList.remove(('d-none'));
-                document.getElementById('user-name').innerHTML = userName;
                 document.getElementById('sale').innerHTML = 'Nessuna agevolazione';
-                document.getElementById('wagon').innerHTML = wagonRand;
-                document.getElementById('cp').innerHTML = cpRand;
                 document.getElementById('cost').innerHTML = userPrice;
             }
         }
