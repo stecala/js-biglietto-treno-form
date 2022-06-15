@@ -1,0 +1,10 @@
+body{
+    background-color: lightseagreen;
+}
+img{
+    width: 100%;
+    border-radius: 25px;
+}
+.mc_boxshadow{
+    box-shadow: 20px 20px 50px rgb(0, 0, 0);
+}
